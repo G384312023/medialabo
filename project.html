@@ -5,31 +5,47 @@
     <title>NHKの番組表</title>
     <script src = "tv-program.js" defer></script>
   </head>
-  <body>
-    <h1>NHKの番組表</h1>
-      <h2>検索結果1件目</h2>
-        <p><ul>
-			<li>開始時刻: 2022年3月4日04:35:00</li>
-            <li>終了時刻: 2022年3月4日04:40:00</li>
-            <li>チャンネル: NHK総合</li>
-            <li>タイトル: みんなうた「ごっつぉさま」／「超変身！ミネラルフォーマーズ」</li>
-            <li>サブタイトル: 「ごっつぉさま」うた：須貝智郎／「超変身！ミネラルフォーマーズ」うた：鬼龍院翔ｆｒｏｍゴールデンボンバー</li>
-            <li>番組説明: 「ごっつぉさま」うた：須貝智郎／「超変身！ミネラルフォーマーズ」うた：鬼龍院翔ｆｒｏｍゴールデンボンバー</li>
-            <li>出演者: 記載なし</li>
-		</ul></p>
 
-      <h2>検索結果2件目</h2>
-      <p><ul>
-        <li>開始時刻: 2022年3月4日 23:05:00</li>
-        <li>終了時刻: 2022年3月4日 23:10:00</li>
-        <li>チャンネル: NHK総合</li>
-        <li>タイトル: パラスポーツ×アニメ「アニ×パラ」▽パラアルペンスキーテーマ曲江口寿史×ＡＣＣ</li>
-        <li>サブタイトル: パラスポーツの魅力をアニメで伝える番組。高速滑走に挑む精神力が試されるパラアルペンスキーを描く。キャラ原案：江口寿史／曲：Ａｗｅｓｏｍｅ　Ｃｉｔｙ　Ｃｌｕｂ</li>
-        <li>出演者: 【声】松本まりか，【出演】Ａｗｅｓｏｍｅ　Ｃｉｔｙ　Ｃｌｕｂ，【監督】西村一彦，【脚本】加納新太，【原案】江口寿史</li>
-    </ul></p>
+  <body>
+    <p>
+      <label for = "start">放送期間</label>
+      <input type="date" name="start" id="start" size="10">
+      から
+      <input type="date" name="end" id="end" size="10">
+      まで
+    </p>
 
     <p>
-      <form><input>検索</input></form>
+      チャンネル
+      <div>
+        <input type="checkbox" name="channel" id="channel" value="NHK総合">
+        <label for="sogo">NHK総合</label>
+      </div>
+      <div>
+        <input type="checkbox" name="channel" id="channel" value="Eテレ">
+        <label for="et">Eテレ</label>
+      </div>
+      <div>
+        <input type="checkbox" name="channel" id="channel" value="BS">
+        <label for="bs">BS</label>
+      </div>
+      <div>
+        <input type="checkbox" name="channel" id="channel" value="BSプレミアム4K">
+        <label for="bsp4k">BSプレミアム4K</label>
+      </div>
+      <div>
+        <input type="checkbox" name="channel" id="channel" value="BS8K">
+        <label for="bsp4k">BS8K</label>
+      </div>
+    </p>  
+
+    <p>
+      <label for = "kw">キーワード</label>
+      <input type="search" name="kw" id="kw" size="10">
+    </p>
+
+    <p>
+      <button id = "search">検索</button>
     </p>
   </body>
 </html>

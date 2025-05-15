@@ -1,21 +1,40 @@
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
-  console.log("番組開始時刻 : " + data.list.g1[0].start_time);
-  console.log("番組終了時刻 : " + data.list.g1[0].end_time);
-  console.log("チャンネル : " + data.list.g1[0].service.name);
-  console.log("番組名 : " + data.list.g1[0].title);
-  console.log("番組サブタイトル : " + data.list.g1[0].subtitle);
-  console.log("番組説明文 : " + data.list.g1[0].content);
-  console.log("出演者 : " + data.list.g1[0].act);
-
-  console.log("番組開始時刻 : " + data.list.g1[1].start_time);
-  console.log("番組終了時刻 : " + data.list.g1[1].end_time);
-  console.log("チャンネル : " + data.list.g1[1].service.name);
-  console.log("番組名 : " + data.list.g1[1].title);
-  console.log("番組サブタイトル : " + data.list.g1[1].subtitle);
-  console.log("番組説明文 : " + data.list.g1[1].content);
-  console.log("出演者 : " + data.list.g1[1].act);
+  for(let i = 0; i < data.length; i++){
+    console.log("番組開始時刻 : " + data.list.g1[i].start_time);
+  console.log("番組終了時刻 : " + data.list.g1[i].end_time);
+  console.log("チャンネル : " + data.list.g1[i].service.name);
+  console.log("番組名 : " + data.list.g1[i].title);
+  console.log("番組サブタイトル : " + data.list.g1[i].subtitle);
+  console.log("番組説明文 : " + data.list.g1[i].content);
+  console.log("出演者 : " + data.list.g1[i].act);
+  }
 }
+
+function consoleLog() {
+  let start = document.querySelector('input#start');
+  let st = start.value;
+  let end = document.querySelector('input#end');
+  let ed = end.value;
+  console.log("放送期間 : " + st +  "〜" + ed);
+
+  console.log("選択されたチャンネル : ");
+  let cbs = document.querySelectorAll('input[name="channel"]');
+  for (let cb of cbs) {
+    if(cb.checked){
+      console.log(cb.value);
+    }
+  }
+
+  let keyword = document.querySelector('input#kw');
+  let kw = keyword.value;
+  console.log("検索キーワード : " + kw);
+}
+
+let searchButton = document.querySelector('button#search');
+searchButton.addEventListener('click', consoleLog);
+
+
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {}
