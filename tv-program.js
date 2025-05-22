@@ -31,18 +31,50 @@ function consoleLog() {
   console.log("検索キーワード : " + kw);
 }
 
-let searchButton = document.querySelector('button#search');
-searchButton.addEventListener('click', consoleLog);
-
-
-
 // 課題5-1 の関数 printDom() はここに記述すること
-function printDom(data) {}
+function printDom(data) {
+  let div = document.createElement('div');
+  div.setAttribute('id', 'result');                          //div#resultの作成
+  let body = document.querySelector('body');
+  body.insertAdjacentElement('beforeend', div);            //div要素をbodyの中の最後に配置
+  show();
+}
 
 // 課題5-1 のイベントハンドラの定義
-function show() {}
+function show() {
+  let h2 = document.createElement('h2');
+  h2.textContent = "日付・時間";
+  div = document.querySelector('div#result');
+  div.insertAdjacentElement('beforeend', h2);
+  let p = document.createElement('p');
+  p.textContent = data.list.g1[0].start_time + "" + data.list.g1[0].end_time;
+  h2.insertAdjacentElement('afterend', p);
+
+  h2 = document.createElement('h2');
+  h2.textContent = "チャンネル";
+  div.insertAdjacentElement('beforeend', h2);
+  p = document.createElement('p');
+  p.textContent = data.list.g1[0].service.name;
+  h2.insertAdjacentElement('afterend', p);
+
+  h2 = document.createElement('h2');
+  h2.textContent = "番組名";
+  div.insertAdjacentElement('beforeend', h2);
+  p = document.createElement('p');
+  p.textContent = data.list.g1[0].title;
+  h2.insertAdjacentElement('afterend', p);
+
+  h2 = document.createElement('h2');
+  h2.textContent = "内容";
+  div.insertAdjacentElement('beforeend', h2);
+  p = document.createElement('p');
+  p.textContent = data.list.g1[0].content;
+  h2.insertAdjacentElement('afterend', p);
+}
 
 // 課題5-1, 6-1 のイベントハンドラ登録処理は以下に記述
+let searchButton = document.querySelector('button#search');
+searchButton.addEventListener('click', consoleLog);
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {}
