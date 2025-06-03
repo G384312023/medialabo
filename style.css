@@ -1,10 +1,12 @@
 body {
   background: linear-gradient(135deg, #1a1a1a 0%, #660000 100%);
   color: #ffffff;
-  font-family: 'Segoe UI';
+  font-family: "Segoe UI";
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #ff3333;
   text-shadow: 1px 1px 6px #000000;
 }
@@ -19,7 +21,7 @@ div#kakukai {
 div#kakukai > div {
   background: linear-gradient(120deg, #2d2d2d 70%, #b30000 100%);
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 18px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -42,11 +44,10 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 追加したスタイル */
 .block {
   display: grid;
   grid-template-rows: 0fr;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .block_trigger:hover .block {
@@ -56,14 +57,14 @@ a:hover {
 .block_inner {
   overflow: hidden;
   min-height: 0;
-  transition: .4s;
+  transition: 0.4s;
   padding: 0 15px;
   color: #ffe6e6;
 }
 
 .block_trigger {
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .block_trigger:hover {
